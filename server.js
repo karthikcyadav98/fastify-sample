@@ -10,6 +10,9 @@ fastify.register(require("./src/routes/itemsRoutes"), {
   prefix: "/api/v1/items",
 });
 
+const connectDB = require("./src/configs/db");
+connectDB();
+
 const start = async () => {
   try {
     await fastify.listen({ port: process.env.PORT });
