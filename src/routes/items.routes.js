@@ -1,9 +1,9 @@
 const {
   createItem,
   getItems,
-  getItemsByUserId,
-} = require("../controller/itemsController");
-const { itemMiddleware } = require("../middlewares/itemMiddleware");
+  getItemsById,
+} = require("../controller/items.controller");
+const { itemMiddleware } = require("../middlewares/item.middleware");
 const { middleware1 } = require("../middlewares/middleware1");
 const { middleware2 } = require("../middlewares/middleware2");
 
@@ -18,7 +18,7 @@ module.exports = function (fastify, opts, done) {
       method: "GET",
       url: "/get/:userId/:success",
       preHandler: itemMiddleware,
-      handler: getItemsByUserId,
+      handler: getItemsById,
     },
     {
       method: "POST",

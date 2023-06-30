@@ -31,7 +31,7 @@ fastify.register(require("@fastify/swagger-ui"), {
 });
 
 // Routes
-fastify.register(require("./src/routes/itemsRoutes"), {
+fastify.register(require("./src/routes/items.routes"), {
   prefix: "/api/v1/items",
 });
 
